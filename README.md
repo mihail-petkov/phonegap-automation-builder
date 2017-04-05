@@ -3,7 +3,7 @@ Automate uploading builds to PhoneGap.
 
 ## Description
 
-`phonegap-automation-builder` allows users to automate the procees of creating new zip archives and uploading them to PhoneGap application through the terminal.
+phonegap-automation-builder allows users to automate the procees of creating new zip archives and uploading them to PhoneGap application through the terminal.
 
 
 ## Installation
@@ -17,7 +17,7 @@ Automate uploading builds to PhoneGap.
 
 ### Without parameters
 
-**Note:** If you want to run the script without parameters, you should edit the values in the script.
+**Note:** If you want to run the script without parameters, you should edit the constants in the script.
 
 ```bash
   ruby phonegap-builder.rb
