@@ -2,19 +2,24 @@ require 'pathname'
 require 'zip'
 
 class Phonegap
-  USER = 'email@abv.bg'
+  USER = 'email@gmail.com'
   ZIP_FILE = 'application.zip'
   APP_ID = '1466977'
 
   class << self
+
     def deploy
+      remove_existing_archive
       zip
       upload
     end
 
+    def remove_existing_archive
+      File.delete(ZIP_FILE) if File.exist?(ZIP_FILE)
+    end 
+
     def zip
       directory = Pathname.new(ARGV.first)
-      File.delete(ZIP_FILE) if File.exist?(ZIP_FILE)
       Zip::File.open(ZIP_FILE, Zip::File::CREATE) do |zipfile|
         Dir[File.join(directory, '**', '**')].each do |file|
           path = Pathname.new(file)
