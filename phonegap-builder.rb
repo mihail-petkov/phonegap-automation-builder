@@ -2,9 +2,10 @@ require 'pathname'
 require 'zip'
 
 class Phonegap
-  USER = 'email@gmail.com'
-  ZIP_FILE = 'application.zip'
-  APP_ID = '1466977'
+  SOURCE = ARGV[0] || '/path/to/source'
+  APP_ID = ARGV[1] || 1111111
+  USER = ARGV[2] || 'user@gmail.com'
+  ZIP_FILE = ARGV[3] || 'application.zip'
 
   class << self
 
@@ -19,7 +20,7 @@ class Phonegap
     end 
 
     def zip
-      directory = Pathname.new(ARGV.first)
+      directory = Pathname.new(SOURCE)
       Zip::File.open(ZIP_FILE, Zip::File::CREATE) do |zipfile|
         Dir[File.join(directory, '**', '**')].each do |file|
           path = Pathname.new(file)
