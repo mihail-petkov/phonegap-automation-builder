@@ -6,12 +6,9 @@ Automate uploading builds to PhoneGap.
 phonegap-automation-builder allows users to automate the procees of creating new zip archives and uploading them to PhoneGap application through the terminal.
 
 
-## Installation
+## Dependencies
 
-
-```ruby
-  gem install rubyzip
-```
+    $ gem install rubyzip
 
 ## Usage
 
