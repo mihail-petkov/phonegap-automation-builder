@@ -30,7 +30,7 @@ class Phonegap
     end
 
     def upload
-      Kernel.system "curl -u #{USER} -X PUT -o #{ZIP_FILE} https://build.phonegap.com/api/v1/apps/#{APP_ID}"
+      Kernel.system "curl -u #{USER} -X PUT -F file=@#{ZIP_FILE} https://build.phonegap.com/api/v1/apps/#{APP_ID}"
     end
   end
 
